@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Login from "../views/Login"
+import Login from "../views/Login/Login.jsx"
 // Aquí irás agregando más vistas, por ejemplo:
 // import Dashboard from "../views/Dashboard"
 

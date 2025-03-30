@@ -1,5 +1,5 @@
 import { useState } from "react"
-import logo from "../assets/logoupqroo.png"
+import logo from "../../assets/Login/logoupqroo.png"
 
 export default function Login() {
   const [email, setEmail] = useState("")
