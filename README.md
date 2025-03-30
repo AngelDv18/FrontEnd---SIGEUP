@@ -46,8 +46,4 @@ Si eres un colaborador del proyecto, asegúrate de seguir estas pautas:
 3. **Enviar un Pull Request**  
     Una vez que tus cambios estén listos, envía un Pull Request para revisión.
 
-## Expandiendo la configuración de ESLint
-
-Si estás desarrollando una aplicación para producción, se recomienda usar TypeScript y habilitar reglas de lint que sean conscientes de los tipos. Consulta la [plantilla de TypeScript](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) para integrar TypeScript y [`typescript-eslint`](https://typescript-eslint.io) en tu proyecto.
-
 ¡Gracias por contribuir al proyecto!
