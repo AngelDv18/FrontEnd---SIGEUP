@@ -1,23 +1,28 @@
 import { useState } from "react"
-import logo from "../../assets/Login/logoupqroo.png"
+import { useNavigate } from "react-router-dom"; // Importa useNavigate
+import logo from "../../assets/Login/Logoupqroo.png"; // Ensure this path is correct
 
 export default function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const navigate = useNavigate(); // Inicia el hook de navegación
 
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log("Email:", email)
     console.log("Password:", password)
+
+    // Aquí puedes agregar la lógica de autenticación (API, validación, etc.)
+    // Después de una autenticación exitosa, rediriges al usuario
+    navigate("/alumno/horarios"); // Ensure this route exists in your router configuration
   }
 
   return (
     <div className="flex items-center justify-center min-h-screen w-full bg-white text-black dark:bg-white dark:text-black">
       <div className="bg-white shadow-lg p-10 rounded-xl w-96">
-      <div className="w-24 h-24 mx-auto mb-6 overflow-hidden">
-     <img src={logo} alt="Logo UPQROO" className="w-full h-full object-contain" />
+        <div className="w-24 h-24 mx-auto mb-6 overflow-hidden">
+          <img src={logo} alt="Logo UPQROO" className="w-full h-full object-contain" />
         </div>
-
 
         <h2 className="text-center text-2xl font-semibold mb-4 text-gray-700">
           Inicia sesión <span className="text-orange-500">SIGEUP</span>
