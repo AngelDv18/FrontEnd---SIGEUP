@@ -14,7 +14,7 @@ export default function Login() {
 
     // Aquí puedes agregar la lógica de autenticación (API, validación, etc.)
     // Después de una autenticación exitosa, rediriges al usuario
-    navigate("/alumno/horarios"); // Ensure this route exists in your router configuration
+    navigate("/alumno/inicio"); // Ensure this route exists in your router configuration
   }
 
   return (

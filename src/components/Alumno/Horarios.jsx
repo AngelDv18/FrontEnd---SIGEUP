@@ -2,8 +2,9 @@ import React from 'react';
 import TableHorarios from './TableHorarios'; // Importa el componente TableHorarios
 
 const Horarios = () => {
-  return (
+  return (  
     <div className="flex">
+      
       <div className="ml-64 p-8 w-full"> {/* Contenido principal con margen izquierdo para el sidebar */}
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-3xl font-semibold text-gray-800">Horarios</h1>

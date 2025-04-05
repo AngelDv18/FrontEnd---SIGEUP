@@ -1,51 +1,65 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Para manejar las rutas internas
+// src/components/SideBar.tsx
+import { Link, useLocation } from "react-router-dom";
+import { FaHome, FaClipboardList, FaGraduationCap, FaFileAlt, FaPowerOff, FaCalendarAlt } from 'react-icons/fa';
 
-const SidebarAlumno = () => {
+
+export const Sidebar = () => {
+  const location = useLocation();
+
+  const links = [
+    {
+      path: "/alumno/inicio",
+      label: "Inicio",
+      icon: <FaHome />,
+    },
+    {
+      path: "/alumno/horarios",
+      label: "Horarios",
+      icon: <FaCalendarAlt />,
+    },
+    {
+      path: "/alumno/kardex",
+      label: "Kardex",
+      icon: <FaClipboardList />,
+    },
+    {
+      path: "/alumno/calificaciones",
+      label: "Calificaciones",
+      icon: <FaGraduationCap />,
+    },
+    {
+      path: "/alumno/reinscripciones",
+      label: "Reinscripciones",
+      icon: <FaFileAlt />,
+    },
+    {
+      path: "/alumno/tramites",
+      label: "Tramites",
+      icon: <FaFileAlt />,
+    },
+    {
+      path: "/",
+      label: "Cerrar sesión",
+      icon: <FaPowerOff />,
+    },
+  ];
+
   return (
-    <div className="w-64 bg-orange-600 text-white h-screen p-5 fixed">
-      <div className="text-center mb-10">
-        <h1 className="text-2xl font-semibold">SIGEUP</h1>
-      </div>
-      <ul>
-        <li>
-          <Link to="/alumno/inicio" className="flex items-center p-3 mb-3 rounded-lg hover:bg-orange-700">
-            <i className="fas fa-home mr-2"></i> Inicio
-          </Link>
-        </li>
-        <li>
-          <Link to="/alumno/horario" className="flex items-center p-3 mb-3 rounded-lg hover:bg-orange-700">
-            <i className="fas fa-home mr-2"></i> Horario
-          </Link>
-        </li>
-        <li>
-          <Link to="/alumno/kardex" className="flex items-center p-3 mb-3 rounded-lg hover:bg-orange-700">
-            <i className="fas fa-book mr-2"></i> Kardex
-          </Link>
-        </li>
-        <li>
-          <Link to="/alumno/calificaciones" className="flex items-center p-3 mb-3 rounded-lg hover:bg-orange-700">
-            <i className="fas fa-graduation-cap mr-2"></i> Calificaciones
-          </Link>
-        </li>
-        <li>
-          <Link to="/alumno/reinscripciones" className="flex items-center p-3 mb-3 rounded-lg hover:bg-orange-700">
-            <i className="fas fa-user-plus mr-2"></i> Reinscripciones
-          </Link>
-        </li>
-        <li>
-          <Link to="/alumno/tramites" className="flex items-center p-3 mb-3 rounded-lg hover:bg-orange-700">
-            <i className="fas fa-cogs mr-2"></i> Trámites
-          </Link>
-        </li>
-        <li>
-          <Link to="/alumno/cerrar-sesion" className="flex items-center p-3 mb-3 rounded-lg hover:bg-orange-700">
-            <i className="fas fa-sign-out-alt mr-2"></i> Cerrar sesión
-          </Link>
-        </li>
-      </ul>
-    </div>
+    <nav className="w-60 bg-primary text-white font-semibold">
+     <ul className="space-y-4 py-6 px-4">
+  {links.map((link) => (
+    <li key={link.path}>
+      <Link
+        to={link.path}
+        className={`flex items-center gap-4 px-6 py-4 hover:bg-secondary hover:text-white rounded-normal ${location.pathname === link.path ? "bg-secondary text-white" : ""}`}
+      >
+        <span>{link.icon}</span>
+        <span>{link.label}</span>
+      </Link>
+    </li>
+  ))}
+</ul>
+
+    </nav>
   );
 };
-
-export default SidebarAlumno;
